@@ -33,7 +33,8 @@ workers = (0...THREADS).map do
 							
 							elsif (response[0...4].casecmp("HELO"))
 								puts("Sending response: ")
-								answer = response + "IP:" + IPSocket.getaddress(Socket.gethostname) + "\nPort:" + PORTNUMBER.to_s + "\nStudentID:11449298"
+								ip = UDPSocket.open {|s| s.connect("64.233.187.99", 1); s.addr.last}
+								answer = response + "IP:" + ip + "\nPort:" + PORTNUMBER.to_s + "\nStudentID:11449298"
 								puts(answer)
 								
 								begin
