@@ -23,7 +23,7 @@ workers = (0...THREADS).map do
 				if (client != nil)
 					begin
 						loop do 
-							response = client.recv(1000000)
+							response = client.gets
 							puts("Received message from client: ")
 							puts(response)
 							
