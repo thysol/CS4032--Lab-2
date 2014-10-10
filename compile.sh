@@ -1,0 +1,1 @@
+sudo apt-get install ruby # Replace with "yum install ruby" if using rpm
