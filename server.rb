@@ -37,13 +37,8 @@ workers = (0...THREADS).map do
 								answer = response + "IP:" + ip + "\nPort:" + PORTNUMBER.to_s + "\nStudentID:11449298"
 								puts(answer)
 								
-								begin
-									client.send(answer, 0)
-								
-								rescue
-									puts("Error sending message")
-									
-								end
+								client.send(answer, 0)
+								puts("Sent message")
 	
 							else
 								default(response)
